@@ -5,6 +5,27 @@ let lowercase = confirm("Do you want lowercase letters?");
 let numbers = confirm("Do you want numbers?");
 let symbols = confirm("Do you want special characters?");
 
+//Conver length to number
+function passwordLength() {
+ return parseFloat(length);
+}
+
+
+
+if (uppercase) {
+  getRandomUpper();
+}
+if (lowercase) {
+  getRandomLower();
+}
+if (numbers) {
+  getRandomNumber();
+}
+if (symbols) {
+  getRandomSymbol();
+}
+
+
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
@@ -37,3 +58,4 @@ function getRandomNumber() {
 function getRandomSymbol() {
   let symbols = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   return symbols[Math.floor(Math.random() * symbols.length)];
+}
