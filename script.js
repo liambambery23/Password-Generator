@@ -1,5 +1,5 @@
 
-//stuff to hold all option for user
+//arrays to hold all option for user
 var masterkeyArr= [];
 var lowerArr=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperArr=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -34,15 +34,15 @@ function generatePassword() {
 
 // series of prompts for password criteria:
 //length
-    // 8 characters and no more than 128 characters LATER returns a string => parseFloat
-var userlength=prompt("How long do you want your password to be?");
+
+var userlength=prompt("How long do you want your password to be? Please select a number between 8 and 128 characters.");
   
 
 // lowercase, //return true or false
 var isLower = confirm("Do you want to include lowercase letters?");
 
 //uppercase, 
-var isUpper = confirm("DO you want to include uppercase letters?");
+var isUpper = confirm("Do you want to include uppercase letters?");
 //numeric, 
 var isNum = confirm("Do you want to include numbers");
 //special characters
@@ -56,6 +56,17 @@ function calclength() {
  };
 
 var length = calclength()
+
+// generates message if user does not select a password length between 8 and 128
+if (length < 8) {
+  alert("Length must be between 8 and 128 characters");
+  location.reload();
+}
+
+if (length > 128) {
+  alert("Length must be between 8 and 128 characters");
+  location.reload();
+}
 
 if(isUpper) {
 //add uppers to the masterarray
@@ -89,7 +100,7 @@ for (var i=0; i<length; i++) {
   }
 
   function finalpassword(min,max) {
-    return finalpswd += max[Math.floor(Math.random() * max.length-1)];
+    return finalpswd += max[Math.floor(Math.random() * max.length)];
   };
   
   return finalpswd;
@@ -100,25 +111,6 @@ for (var i=0; i<length; i++) {
 
 
 
-//WHEN I answer each prompt
-//LATER validated and at least one character type should be selected
-//all prompts are answered
-//generate pw loop
-//how do i generate my pw?
-//pull from masterarray
-//pull by the userlength
-
-
-  //select by? randomly selecting from your masterarray(min =0 max , end=masterArray.length-1)
-// Math.floor(Math.random() * (max - min) + min);
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-//random value as indexvalues
-//finalpassword+= each special char
-
-
-
-
-// displayed in an alert or written to the page
 
   
 
